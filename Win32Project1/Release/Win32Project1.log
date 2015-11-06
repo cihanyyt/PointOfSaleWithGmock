@@ -1,0 +1,15 @@
+﻿Build started 11/6/2015 12:06:54 PM.
+     1>Project "C:\Users\Z003EUNW\Documents\Visual Studio 2012\Projects\Win32Project1\Win32Project1\Win32Project1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _VARIADIC_MAX=10 /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "D:\tdd\gtest-1.7.0\src\gtest-all.cc" "D:\tdd\gtest-1.7.0\src\gtest_main.cc"
+         gtest-all.cc
+         gtest_main.cc
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Z003EUNW\Documents\Visual Studio 2012\Projects\Win32Project1\Release\GoogleTest.lib" /NOLOGO /LTCG "Release\gtest-all.obj"
+         Release\gtest_main.obj
+         Win32Project1.vcxproj -> C:\Users\Z003EUNW\Documents\Visual Studio 2012\Projects\Win32Project1\Release\GoogleTest.lib
+     1>Done Building Project "C:\Users\Z003EUNW\Documents\Visual Studio 2012\Projects\Win32Project1\Win32Project1\Win32Project1.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:07.97
