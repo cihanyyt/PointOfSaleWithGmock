@@ -1,0 +1,4 @@
+*.obj
+*.pdb
+*.lastbuildstate
+Win32Project1/Debug/cl.command.1.tlog
