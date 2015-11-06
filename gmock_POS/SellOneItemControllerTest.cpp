@@ -11,7 +11,7 @@ using testing::AtLeast;
 using testing::Sequence;
 using testing::InSequence;
 
-TEST(HelloTest, productFound)
+TEST(SellOneItemControllerTester, productFound)
 {
     MockCatalog catalog;
     MockDisplay display;
@@ -28,7 +28,7 @@ TEST(HelloTest, productFound)
     sellOneItemController.onBarcode("12345");
 }
 
-TEST(HelloTest, productNotFound)
+TEST(SellOneItemControllerTester, productNotFound)
 {
     MockCatalog catalog;
     MockDisplay display;
@@ -45,8 +45,19 @@ TEST(HelloTest, productNotFound)
 
 }
 
-TEST(HelloTest, end)
+TEST(SellOneItemControllerTester, emptyParcode)
 {
+    MockDisplay display;
 
+    EXPECT_CALL(display,displayScannedEmptyBarcodeMessage())
+        .Times(AtLeast(1));
+
+    SellOneItemController sellOneItemController(nullptr, &display);
+    sellOneItemController.onBarcode("");
+
+}
+
+TEST(SellOneItemControllerTester, TEST_END)
+{
     EXPECT_EQ(4,4);
 }

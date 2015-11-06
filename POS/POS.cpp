@@ -10,37 +10,18 @@
 #include "Price.h"
 #include "SellOneItemController.h"
 #include "InMemoryCatalog.h"
-#include "Display.h"
+#include "ConsoleDisplay.h"
 
-
-
-class Display : public IDisplay
-{
-    void displayPrice(Price* price)
-    {
-        std::cout << "RON " << price->inLei()  << std::endl;
-    }
-
-    void displayProductNotFoundMessage(std::string barcode)
-    {
-        std::cout << "Product not found for barcode: " << barcode << std::endl;
-    }
-
-    void displayScannedEmptyBarcodeMessage()
-    {
-        std::cout << "empty barcode" << std::endl;
-    }
-};
+std::map<std::string, Price> exMap;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-    std::map<std::string, Price> exMap;
-    exMap.insert(     std::map<std::string, Price>::value_type("12345", Price(1295))         );
+    exMap.insert(std::map<std::string, Price>::value_type("12345", Price(1295)));
 
     SellOneItemController* controller = new SellOneItemController
         (
         new InMemoryCatalog(exMap),
-        new Display
+        new ConsoleDisplay
         );
 
     controller->onBarcode("12345");

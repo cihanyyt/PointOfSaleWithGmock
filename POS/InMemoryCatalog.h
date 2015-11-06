@@ -1,10 +1,13 @@
+#ifndef INMEMORYCATALOG_H
+#define INMEMORYCATALOG_H
+
 #include <string>
 #include <map>
 
 #include "Catalog.h"
 #include "Price.h"
 
-class InMemoryCatalog : public IntfCatalog
+class InMemoryCatalog : public ICatalog
 {
 public:
     InMemoryCatalog(std::map<std::string, Price>pricesByBarcode)
@@ -18,10 +21,10 @@ public:
             return NULL;
         else
         return &priceByBarcode[barcode];
-            
-        //return &priceByBarcode[barcode];
     }
 
 private:
     std::map<std::string, Price> priceByBarcode;
 };
+
+#endif

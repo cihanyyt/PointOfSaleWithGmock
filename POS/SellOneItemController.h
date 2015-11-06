@@ -1,3 +1,6 @@
+#ifndef SELLONEITEMCONTROLLER_H
+#define SELLONEITEMCONTROLLER_H
+
 #include <string>
 #include "Catalog.h"
 #include "Display.h"
@@ -7,7 +10,7 @@ class SellOneItemController : public SellController
 {
 public:
 
-    SellOneItemController(IntfCatalog* catalog, IDisplay* display)
+    SellOneItemController(ICatalog* catalog, IDisplay* display)
     {
         this->catalog = catalog;
         this->display = display;
@@ -34,6 +37,8 @@ public:
 private:
     int m_val;
 
-    IntfCatalog *catalog;
+    ICatalog *catalog;
     IDisplay *display;
 };
+
+#endif

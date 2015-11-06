@@ -5,7 +5,7 @@
 
 #include <string>
 
-class IntfCatalog
+class ICatalog
 {
 public:
     virtual Price* findPrice(std::string) = 0;
