@@ -7,7 +7,7 @@
 #include "Price.h"
 
 using ::testing::Return;
-using testing::AtLeast;
+using testing::Exactly;
 using testing::Sequence;
 using testing::InSequence;
 
@@ -22,7 +22,7 @@ TEST(SellOneItemControllerTester, productFound)
 
 
     EXPECT_CALL(display,displayPrice(price))
-        .Times(AtLeast(1));
+        .Times(Exactly(1));
 
     SellOneItemController sellOneItemController(&catalog, &display);
     sellOneItemController.onBarcode("12345");
@@ -38,7 +38,7 @@ TEST(SellOneItemControllerTester, productNotFound)
         .WillByDefault(Return(nullptr));
 
     EXPECT_CALL(display,displayProductNotFoundMessage("12345"))
-        .Times(AtLeast(1));
+        .Times(Exactly(1));
 
     SellOneItemController sellOneItemController(&catalog, &display);
     sellOneItemController.onBarcode("12345");
@@ -50,7 +50,7 @@ TEST(SellOneItemControllerTester, emptyParcode)
     MockDisplay display;
 
     EXPECT_CALL(display,displayScannedEmptyBarcodeMessage())
-        .Times(AtLeast(1));
+        .Times(Exactly(1));
 
     SellOneItemController sellOneItemController(nullptr, &display);
     sellOneItemController.onBarcode("");
